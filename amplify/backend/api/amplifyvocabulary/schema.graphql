@@ -1,0 +1,6 @@
+type Palabra @model {
+  id: ID!
+  palabra: String!
+  traduccion: String!
+  definicion: String
+}
