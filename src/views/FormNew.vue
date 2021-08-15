@@ -65,9 +65,10 @@ export default {
     async createPalabra() {
       const palabra = this.word.word;
       const traduccion = this.word.translation;
+      const tipo = 'Palabra'
       //console.log(word, 'word', translation, 'translation')
       if (!palabra || !traduccion) return;
-      const input = { palabra, traduccion };
+      const input = { palabra, traduccion, tipo};
       await API.graphql({
         query: createPalabra,
         variables: { input: input },

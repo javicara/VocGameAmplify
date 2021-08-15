@@ -8,6 +8,7 @@ export const onCreatePalabra = /* GraphQL */ `
       palabra
       traduccion
       definicion
+      tipo
       createdAt
       updatedAt
     }
@@ -20,6 +21,7 @@ export const onUpdatePalabra = /* GraphQL */ `
       palabra
       traduccion
       definicion
+      tipo
       createdAt
       updatedAt
     }
@@ -32,6 +34,7 @@ export const onDeletePalabra = /* GraphQL */ `
       palabra
       traduccion
       definicion
+      tipo
       createdAt
       updatedAt
     }

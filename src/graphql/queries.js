@@ -8,6 +8,7 @@ export const getPalabra = /* GraphQL */ `
       palabra
       traduccion
       definicion
+      tipo
       createdAt
       updatedAt
     }
@@ -25,6 +26,7 @@ export const listPalabras = /* GraphQL */ `
         palabra
         traduccion
         definicion
+        tipo
         createdAt
         updatedAt
       }

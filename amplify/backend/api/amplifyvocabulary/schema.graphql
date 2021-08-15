@@ -3,4 +3,5 @@ type Palabra @model {
   palabra: String!
   traduccion: String!
   definicion: String
+  tipo: String
 }

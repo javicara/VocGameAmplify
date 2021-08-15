@@ -111,6 +111,7 @@
 
 <script>
 // @ is an alias to /src
+import { mapActions, mapState } from "vuex";
 
 export default {
   data() {
@@ -132,36 +133,17 @@ export default {
       ],
       selectedOptions: [],
 
-      palabras: [
-        {
-          palabra: "Slang",
-          traduccion: "Jerga",
-        },
-        {
-          palabra: "Heartfelt",
-          traduccion: "Sentido, de que algo es sentido",
-        },
-        {
-          palabra: "Hopefully",
-          traduccion: "Ojala",
-        },
-        {
-          palabra: "Awkward",
-          traduccion: "Incomodo",
-        },
-        {
-          palabra: "Eyelashes",
-          traduccion: "pestañas",
-        },
-        {
-          palabra: "Lacking",
-          traduccion: "carente",
-        },
-      ],
+    
       selectedword: "",
     };
   },
+  computed: {
+    ...mapState("palabras",["palabras"])
+  },
   methods: {
+        ...mapActions("palabras", ["fetchPalabras"]),
+
+
     checkAnswer(rta) {
       if (rta == this.selectedword.traduccion) {
         //alert("Correcto Rey");
@@ -228,7 +210,11 @@ export default {
     },
   },
   mounted() {
-    this.selectWord();
+    this.fetchPalabras();
+    setTimeout(() => {
+      this.selectWord();
+    }, 1000);
+    
   },
 };
 </script>
